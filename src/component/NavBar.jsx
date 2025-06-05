@@ -1,6 +1,8 @@
 // components/NavBar.jsx
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import webLogo from '../assets/paw.png';
+import userprofile from '../assets/userprofile.png'
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -29,7 +31,7 @@ const NavBar = () => {
   return (
     <div className="nav-row">
       <div className="nav-left">
-        <img className="icon-paw" src="src/assets/paw.png" alt="logo" />
+        <img className="icon-paw" src={webLogo} alt="logo" />
         <div className="title">
           <h1>DETECT DISEASE</h1>
           <h2>Cat Skin Disease</h2>
@@ -59,7 +61,7 @@ const NavBar = () => {
     isPublicHome && <NavLink to="/login" className="btn-login">Login</NavLink>
   ) : (
     <div className="profile-section" onClick={handleLogout} title="Logout">
-      <img src="src/assets/userprofile.png" alt="profile" className="profile-icon" />
+      <img src={userprofile} alt="profile" className="profile-icon" />
       <div className="username">{user.username}</div>
     </div>
   )}

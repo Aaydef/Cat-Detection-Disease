@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthContext';
 // import { useLocation } from 'react-router-dom'; // Tidak digunakan, bisa dihapus
 import CreditLogo from '../component/CreditLogo';
 import CameraCaptureBox from '../component/CameraCaptureBox';
+import cengk2Image from '../assets/cengk2.png';
 
 const Home = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -259,7 +260,7 @@ const Home = () => {
 
           <div className="image-cat-wrapper">
                   <div className="image-cat">
-                    <img src="src/assets/cengk2.png" alt="cat" />
+                    <img src={cengk2Image} alt="cat" />
                   </div>
                 <div className="speech-bubble">
                   <p>Try this in your cat's skin!</p>
