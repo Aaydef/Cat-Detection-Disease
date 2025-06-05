@@ -1,0 +1,95 @@
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+      
+   
+    background-image: 
+        linear-gradient(to bottom right, #fbcfe8, #bfdbfe),
+        url('public/images/paw60.png');
+    background-repeat: no-repeat, repeat;
+    background-size: cover, 60px 60px;
+    background-position: center, center;
+    position: relative;
+    z-index: 0;
+      
+  }
+  
+  .login-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+  }
+  
+  .login-title {
+    text-align: center;
+    color: #ec4899; 
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .login-form .form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  .form-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #4b5563; 
+    margin-bottom: 0.4rem;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #f9a8d4; 
+    border-radius: 0.75rem;
+    outline: none;
+    font-size: 1rem;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .form-input:focus {
+    border-color: #f472b6; 
+    box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.3);
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 0.6rem;
+    background-color: #ec4899; 
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .login-button:hover {
+    background-color: #d0e4ff; 
+    color: #ff0080;
+  }
+  
+  .login-footer {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #6b7280; 
+    margin-top: 1.2rem;
+  }
+  
+  .register-link {
+    color: #3b82f6; 
+    text-decoration: underline;
+  }
+  

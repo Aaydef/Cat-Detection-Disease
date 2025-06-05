@@ -1,0 +1,429 @@
+[
+  {
+    "filename": "omoow.jpg",
+    "upload_time": "2025-05-26 14:53:39",
+    "detected_classes": []
+  },
+  {
+    "filename": "Screenshot 2024-11-16 181958.png",
+    "upload_time": "2025-05-26 15:21:14",
+    "detected_classes": []
+  },
+  {
+    "filename": "annotated/annotated_cingrren.jpg",
+    "upload_time": "2025-05-26 15:58:51",
+    "detected_classes": []
+  },
+  {
+    "filename": "annotated/annotated_cenk.jpg",
+    "upload_time": "2025-05-26 16:51:06",
+    "detected_classes": []
+  },
+  {
+    "filename": "annotated/annotated_cingreeen.jpg",
+    "upload_time": "2025-05-26 18:16:43",
+    "detected_classes": []
+  },
+  {
+    "filename": "annotated/annotated_hairloss19_rotated_90.jpg",
+    "upload_time": "2025-05-27 14:36:28",
+    "detected_classes": [],
+    "disease_details": []
+  },
+  {
+    "filename": "annotated/annotated_hairloss06_rotated_180.jpg",
+    "upload_time": "2025-05-27 14:45:09",
+    "detected_classes": [],
+    "disease_details": []
+  },
+  {
+    "filename": "annotated/annotated_ringworm8_jpg.rf.0808a53120f0b27874581f7b4362f374.jpg",
+    "upload_time": "2025-05-27 14:53:30",
+    "detected_classes": [],
+    "disease_details": []
+  },
+  {
+    "filename": "annotated/annotated_Image_62.jpg",
+    "upload_time": "2025-05-27 15:29:50",
+    "detected_classes": [],
+    "disease_details": []
+  },
+  {
+    "filename": "annotated/annotated_27_png.rf.ca939d8942f39c45681c64905bebe538.jpg",
+    "upload_time": "2025-05-27 22:42:22",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_frame9_402_jpg.rf.cd110c317f7f55eda07b2113f6ac2953.jpg",
+    "upload_time": "2025-05-28 14:08:38",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_frame6_892_jpg.rf.197147cb519cf8e772d91603edf347fe.jpg",
+    "upload_time": "2025-05-29 19:42:41",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_hairloss06_rotated_270.jpg",
+    "upload_time": "2025-05-30 21:27:24",
+    "detected_classes": [
+      "Hairloss"
+    ],
+    "disease_details": [
+      {
+        "name": "Hairloss",
+        "penjelasan": "Kerontokan rambut abnormal yang bisa disebabkan oleh stres, alergi, gangguan hormonal (hipertiroid), atau parasit.",
+        "solusi": "Identifikasi penyebab utama (cek thyroid, tes alergi), Suplemen omega-3 untuk kesehatan kulit."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_22_png.rf.c09c7eb385b522322360fda205ab423c.jpg",
+    "upload_time": "2025-05-30 21:56:00",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_frame6_908_jpg.rf.aeb62e12e54a61d69317e79c7d14d15f.jpg",
+    "upload_time": "2025-05-30 21:59:52",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_25_png.rf.8fd7f41c2258ac6d9dcb906a2fe11b10.jpg",
+    "upload_time": "2025-05-30 22:01:02",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_18_png.rf.e22fffe2b20d5d449bd521aa0c5d726c.jpg",
+    "upload_time": "2025-05-30 22:06:49",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_27_png.rf.ca939d8942f39c45681c64905bebe538.jpg",
+    "upload_time": "2025-05-30 22:10:19",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_25_png.rf.8fd7f41c2258ac6d9dcb906a2fe11b10.jpg",
+    "upload_time": "2025-05-30 22:19:32",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_18_png.rf.e22fffe2b20d5d449bd521aa0c5d726c.jpg",
+    "upload_time": "2025-05-30 22:22:31",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_frame6_908_jpg.rf.aeb62e12e54a61d69317e79c7d14d15f.jpg",
+    "upload_time": "2025-05-30 22:40:16",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_438910578_10220571452555225_8508184020251308112_n.jpg",
+    "upload_time": "2025-05-30 22:54:07",
+    "detected_classes": [
+      "Ringworm"
+    ],
+    "disease_details": [
+      {
+        "name": "Ringworm",
+        "penjelasan": "Infeksi jamur Microsporum canis yang menyebabkan lesi melingkar, kulit bersisik, dan rambut patah/rontok. Sangat menular ke manusia dan hewan lain.",
+        "solusi": "Salep antijamur (miconazole/clotrimazole), Gunakan sarung tangan saat menangani kucing."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_hot-spots-suck_00028.jpg",
+    "upload_time": "2025-05-30 23:07:30",
+    "detected_classes": [
+      "Ringworm"
+    ],
+    "disease_details": [
+      {
+        "name": "Ringworm",
+        "penjelasan": "Infeksi jamur Microsporum canis yang menyebabkan lesi melingkar, kulit bersisik, dan rambut patah/rontok. Sangat menular ke manusia dan hewan lain.",
+        "solusi": "Salep antijamur (miconazole/clotrimazole), Gunakan sarung tangan saat menangani kucing."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_Image_55-2-.jpg",
+    "upload_time": "2025-05-31 21:07:42",
+    "detected_classes": [
+      "Ringworm"
+    ],
+    "disease_details": [
+      {
+        "name": "Ringworm",
+        "penjelasan": "Infeksi jamur Microsporum canis yang menyebabkan lesi melingkar, kulit bersisik, dan rambut patah/rontok. Sangat menular ke manusia dan hewan lain.",
+        "solusi": "Salep antijamur (miconazole/clotrimazole), Gunakan sarung tangan saat menangani kucing."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_27_png.rf.ca939d8942f39c45681c64905bebe538.jpg",
+    "upload_time": "2025-05-31 22:17:33",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_frame_463_jpg.rf.9d90477683391b5a76adc8276d6a1861.jpg",
+    "upload_time": "2025-06-01 10:24:18",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_frame8_3_jpg.rf.29e77bcaf7fb6a675f17196708420ed5.jpg",
+    "upload_time": "2025-06-01 10:24:34",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_24_png.rf.166bf6643f2254b83a82946ba37781d3.jpg",
+    "upload_time": "2025-06-01 10:27:48",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_8_png.rf.69565d10e16f47d5a7bc2be87b1fa0d9.jpg",
+    "upload_time": "2025-06-01 10:28:07",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_frame6_892_jpg.rf.6db650ed298e34ac55693e727601c33b.jpg",
+    "upload_time": "2025-06-01 10:28:20",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_23_png.rf.11d2f270cca60b5960bd557c80128000.jpg",
+    "upload_time": "2025-06-01 10:29:11",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_23_png.rf.11d2f270cca60b5960bd557c80128000.jpg",
+    "upload_time": "2025-06-01 10:29:26",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_8_png.rf.69565d10e16f47d5a7bc2be87b1fa0d9.jpg",
+    "upload_time": "2025-06-01 10:29:53",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_10_png.rf.bb2bbc35e7f57b9baff25d97e7926a49.jpg",
+    "upload_time": "2025-06-01 10:33:51",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_2_png.rf.da7f7390d29cdb7ddb22cce55050ef61.jpg",
+    "upload_time": "2025-06-01 10:34:42",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  },
+  {
+    "filename": "annotated/annotated_4_png.rf.9442139a99556d7588bc51fc86a82209.jpg",
+    "upload_time": "2025-06-01 10:42:11",
+    "detected_classes": [
+      "Scabies"
+    ],
+    "disease_details": [
+      {
+        "name": "Scabies",
+        "penjelasan": "Infeksi tungau Sarcoptes scabiei yang menyebabkan gatal parah, kerak kuning keabu-abuan, dan rambut rontok terutama di telinga, wajah, dan siku.",
+        "solusi": "Obat topical: Selamectin (Revolution) atau ivermectin, Mandi dengan shampo antiseborheik, Pembersihan lingkungan kandang secara menyeluruh, Isolasi sementara dari hewan lain."
+      }
+    ]
+  }
+]
