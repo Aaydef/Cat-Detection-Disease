@@ -12,9 +12,7 @@ const PublicHome = () => {
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  
   const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-  // ============================
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -34,11 +32,9 @@ const PublicHome = () => {
 
     const formData = new FormData();
     formData.append('image', selectedImage);
-
     setLoading(true);
 
-    // === Update di sini ===
-    fetch(`${API_URL}/public-upload`, { // API_URL di sini
+    fetch(`${API_URL}/public-upload`, {
       method: 'POST',
       body: formData,
     })
@@ -46,8 +42,7 @@ const PublicHome = () => {
       .then(data => {
         setDetectionResult(data);
         if (data.filename) {
-          // === Update juga di sini ===
-          setResultImage(`${API_URL}/uploads/${data.filename}`); // API_URL di sini
+          setResultImage(`${API_URL}/uploads/${data.filename}`);
         }
         setShowModal(true);
         setLoading(false);
@@ -65,6 +60,7 @@ const PublicHome = () => {
       <div className="container">
         <h1 className="welcome">Welcome to Cat Skin Detect Disease!</h1>
         <h3 className="text-sign">Sign in to experience our other features!</h3>
+
         <div className="home-row">
           <div className="upload-box">
             <div className="left-side">
@@ -94,36 +90,35 @@ const PublicHome = () => {
             <div className="image-cat">
               <img src={cengk2Image} alt="cat" />
             </div>
-          <div className="speech-bubble">
-            <p>Try this in your cat's skin!</p>
-            <p>Types of cat's disease that can be detected:</p>
-            <ul>
-              <li>Scabies</li>
-              <li>Ringworm</li>
-              <li>Hairloss</li>
-            </ul>
+            <div className="speech-bubble">
+              <p>Try this in your cat's skin!</p>
+              <p>Types of cat's disease that can be detected:</p>
+              <ul>
+                <li>Scabies</li>
+                <li>Ringworm</li>
+                <li>Hairloss</li>
+              </ul>
+            </div>
           </div>
-          </div>
-
         </div>
 
         <div className="sign-in-features">
-            <h3 className="text-sign">Here's our other features!</h3>
-            <div className="feature-list">
-              <div className="feature-item">
-                <span className="feature-icon">📸</span>
-                <p className="feature-text">Detect with camera</p>
-              </div>
-              <div className="feature-item">
-                <span className="feature-icon">💾</span>
-                <p className="feature-text">Save to history</p>
-              </div>
+          <h3 className="text-sign">Here's our other features!</h3>
+          <div className="feature-list">
+            <div className="feature-item">
+              <span className="feature-icon">📸</span>
+              <p className="feature-text">Detect with camera</p>
             </div>
+            <div className="feature-item">
+              <span className="feature-icon">💾</span>
+              <p className="feature-text">Save to history</p>
+            </div>
+          </div>
         </div>
 
         <footer className="footer-credit">
-            <CreditLogo />
-          </footer>
+          <CreditLogo />
+        </footer>
       </div>
 
       {/* MODAL VIEW */}
@@ -140,11 +135,11 @@ const PublicHome = () => {
               </div>
             ))}
 
-            {result.image_url && (
+            {resultImage && (
               <div className="annotated-image">
                 <h3>Annotated Image:</h3>
                 <img
-                  src={result.image_url}
+                  src={resultImage}
                   alt="Detected Result"
                   style={{ maxWidth: '100%', marginBottom: '1rem' }}
                 />
