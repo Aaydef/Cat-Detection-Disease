@@ -11,6 +11,10 @@ const PublicHome = () => {
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
+  
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  // ============================
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -32,15 +36,17 @@ const PublicHome = () => {
 
     setLoading(true);
 
-    fetch('http://localhost:5000/public-upload', {
-        method: 'POST',
-        body: formData,
+    // === Update di sini ===
+    fetch(`${API_URL}/public-upload`, { // API_URL di sini
+      method: 'POST',
+      body: formData,
     })
       .then(res => res.json())
       .then(data => {
         setDetectionResult(data);
         if (data.filename) {
-          setResultImage(`http://localhost:5000/uploads/${data.filename}`);
+          // === Update juga di sini ===
+          setResultImage(`${API_URL}/uploads/${data.filename}`); // API_URL di sini
         }
         setShowModal(true);
         setLoading(false);
@@ -164,4 +170,3 @@ const PublicHome = () => {
 };
 
 export default PublicHome;
-

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import NavBar from '../component/NavBar';
 import { useAuth } from '../context/AuthContext';
-import { useLocation } from 'react-router-dom'; 
+// import { useLocation } from 'react-router-dom'; // Tidak digunakan, bisa dihapus
 import CreditLogo from '../component/CreditLogo';
 import CameraCaptureBox from '../component/CameraCaptureBox';
 
@@ -15,48 +15,39 @@ const Home = () => {
   const [loadingSave, setLoadingSave] = useState(false);
   const { token, user } = useAuth(); // Ambil juga user dari context
   const [isSaved, setIsSaved] = useState(false);
-  // const location = useLocation();
   const inputFileRef = useRef(null);
 
   // Modal kamera
   const [showCameraModal, setShowCameraModal] = useState(false);
   const [cameraImageDataURL, setCameraImageDataURL] = useState(null);
 
-  // useEffect(() => {
-  //   setSelectedImage(null);
-  //   setPreviewURL(null);
-  //   setShowModal(false);
-  //   setLoading(false);
-  //   setLoadingSave(false);
-  //   if (inputFileRef.current) {
-  //     inputFileRef.current.value = null;
-  //   }
-  // }, [location.pathname]);-
+  // === Tambahkan ini di sini ===
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  // ============================
 
   // useEffect (logout)
   useEffect(() => {
     if (!token) {
       setIsSaved(false); // Reset isSaved jika user logout
-      setDetectionResult(null); 
-      setCameraImageDataURL(null); 
-      setSelectedImage(null); 
-      setPreviewURL(null); 
-      setShowModal(false); 
+      setDetectionResult(null);
+      setCameraImageDataURL(null);
+      setSelectedImage(null);
+      setPreviewURL(null);
+      setShowModal(false);
       if (inputFileRef.current) {
         inputFileRef.current.value = null; // Reset input file saat logout
       }
     }
   }, [token]);
 
-
   // Fungsi tangkap gambar dari kamera
   const handleCameraCapture = (dataUrl) => {
     setCameraImageDataURL(dataUrl);
     setDetectionResult(null); // Reset hasil deteksi sebelumnya
     setShowModal(false);
-    setIsSaved(false); 
-    setSelectedImage(null); 
-    setPreviewURL(null); 
+    setIsSaved(false);
+    setSelectedImage(null);
+    setPreviewURL(null);
     setShowCameraModal(false);
     if (inputFileRef.current) {
       inputFileRef.current.value = null; // Reset input file
@@ -73,8 +64,8 @@ const Home = () => {
       alert("Please login first!");
       return;
     }
-    setIsSaved(false); 
-    setDetectionResult(null); 
+    setIsSaved(false);
+    setDetectionResult(null);
     setLoading(true);
     setLoadingSave(false);
 
@@ -84,7 +75,8 @@ const Home = () => {
         const formData = new FormData();
         formData.append('image', blob, 'camera_capture.jpg');
 
-        return axios.post('http://localhost:5000/upload', formData, {
+        // === Update di sini ===
+        return axios.post(`${API_URL}/upload`, formData, { // Gunakan API_URL
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'multipart/form-data'
@@ -109,7 +101,7 @@ const Home = () => {
       setDetectionResult(null); // Reset hasil deteksi sebelumnya
       setShowModal(false);
       setIsSaved(false); // Reset isSaved saat ada gambar baru dipilih
-      setCameraImageDataURL(null); 
+      setCameraImageDataURL(null);
     }
   };
 
@@ -124,14 +116,15 @@ const Home = () => {
     }
 
     setIsSaved(false); // Reset isSaved saat ada deteksi baru
-    setDetectionResult(null); 
+    setDetectionResult(null);
     setLoading(true);
     setLoadingSave(false);
 
     const formData = new FormData();
     formData.append('image', selectedImage);
 
-    axios.post('http://localhost:5000/upload', formData, {
+    // === Update di sini ===
+    axios.post(`${API_URL}/upload`, formData, { // Gunakan API_URL
       headers: {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'multipart/form-data'
@@ -160,7 +153,8 @@ const Home = () => {
     setLoadingSave(true);
     setIsSaved(false);
 
-    axios.post('http://localhost:5000/save_history_db', {
+    // === Update di sini ===
+    axios.post(`${API_URL}/save_history_db`, { // Gunakan API_URL
       filename: detectionResult.filename,
       detected_classes: detectionResult.detected_classes,
       disease_details: detectionResult.disease_details,
@@ -176,7 +170,7 @@ const Home = () => {
       setSelectedImage(null);
       setPreviewURL(null);
       setCameraImageDataURL(null);
-      setDetectionResult(null); 
+      setDetectionResult(null);
       if (inputFileRef.current) {
         inputFileRef.current.value = null; // Reset input file setelah disimpan
       }
@@ -208,9 +202,9 @@ const Home = () => {
                 className="file-input"
                 ref={inputFileRef}
               />
-              <button 
-                className="btn-detect" 
-                onClick={handleDetect} 
+              <button
+                className="btn-detect"
+                onClick={handleDetect}
                 disabled={loading || !token} // Disable jika tidak ada token
               >
                 {loading ? 'Detecting...' : 'Go Detect'}
@@ -264,21 +258,21 @@ const Home = () => {
 
 
           <div className="image-cat-wrapper">
-                <div className="image-cat">
-                  <img src="src/assets/cengk2.png" alt="cat" />
+                  <div className="image-cat">
+                    <img src="src/assets/cengk2.png" alt="cat" />
+                  </div>
+                <div className="speech-bubble">
+                  <p>Try this in your cat's skin!</p>
+                  <p>Types of cat's disease that can be detected:</p>
+                  <ul>
+                    <li>Scabies</li>
+                    <li>Ringworm</li>
+                    <li>Hairloss</li>
+                  </ul>
                 </div>
-              <div className="speech-bubble">
-                <p>Try this in your cat's skin!</p>
-                <p>Types of cat's disease that can be detected:</p>
-                <ul>
-                  <li>Scabies</li>
-                  <li>Ringworm</li>
-                  <li>Hairloss</li>
-                </ul>
-              </div>
+                </div>
               </div>
             </div>
-          </div>
 
       {/* Detection Result Modal */}
       {showModal && detectionResult?.disease_details && (
@@ -297,8 +291,9 @@ const Home = () => {
             {detectionResult.filename && (
               <div className="annotated-image">
                 <h3>Annotated Image:</h3>
+                {/* === Update di sini === */}
                 <img
-                  src={`http://localhost:5000/uploads/${detectionResult.filename}`}
+                  src={`${API_URL}/uploads/${detectionResult.filename}`} // Gunakan API_URL
                   alt="Detected Result"
                   className="result-image"
                 />
@@ -306,16 +301,16 @@ const Home = () => {
             )}
 
             <div className="modal-buttons">
-              <button 
-                className="modal-btn save-btn" 
+              <button
+                className="modal-btn save-btn"
                 onClick={handleSaveToHistory}
                 disabled={loadingSave || isSaved || !token} // Tambahkan !token
               >
                 {loadingSave ? 'Saving...' : (isSaved ? 'Saved' : 'Save to History')}
               </button>
 
-              <button 
-                className="modal-btn close-btn" 
+              <button
+                className="modal-btn close-btn"
                 onClick={() => setShowModal(false)}
               >
                 Close
