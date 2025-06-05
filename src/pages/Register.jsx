@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
+// import axios from 'axios'; // Anda menggunakan fetch, jadi axios tidak diperlukan di sini
+import { useNavigate } from 'react-router-dom'; // Penting jika Anda ingin navigasi setelah register
 
 export default function Register() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const navigate = useNavigate(); // Inisialisasi useNavigate
+
+
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  // ============================
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage('');
 
     try {
-      const response = await fetch('http://localhost:5000/register', {
+      // === Ganti di sini ===
+      const response = await fetch(`${API_URL}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, email, password }),
@@ -24,11 +32,14 @@ export default function Register() {
         setUsername('');
         setEmail('');
         setPassword('');
+        // Arahkan user ke halaman login setelah registrasi berhasil
+        navigate('/login');
       } else {
         setMessage(data.error || 'Terjadi kesalahan saat registrasi.');
       }
     } catch (error) {
-      setMessage('Gagal terhubung ke server.');
+      console.error("Error during registration:", error); // Log error untuk debugging
+      setMessage('Gagal terhubung ke server. Pastikan backend berjalan.');
     }
   };
 
@@ -72,7 +83,7 @@ export default function Register() {
           </div>
           <button type="submit" className="button">Daftar</button>
         </form>
-        {message && <p>{message}</p>}
+        {message && <p className="message-status">{message}</p>} {/* Tambahkan kelas untuk styling pesan */}
         <p className="footer">
           Sudah punya akun? <a href="/login" className="link">Masuk di sini</a>
         </p>
