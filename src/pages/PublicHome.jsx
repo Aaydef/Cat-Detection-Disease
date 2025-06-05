@@ -140,11 +140,11 @@ const PublicHome = () => {
               </div>
             ))}
 
-            {resultImage && (
+            {result.image_url && (
               <div className="annotated-image">
                 <h3>Annotated Image:</h3>
                 <img
-                  src={resultImage}
+                  src={result.image_url}
                   alt="Detected Result"
                   style={{ maxWidth: '100%', marginBottom: '1rem' }}
                 />

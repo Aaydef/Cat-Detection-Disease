@@ -314,15 +314,15 @@ def upload_image(user_id):
                             "penjelasan": info["penjelasan"],
                             "solusi": info["solusi"]
                         })
-            else:
-                print("⚠️ Tidak ada OBB yang terdeteksi pada result ini.")
 
-        # Save to DB
-        # save_history_db(user_id, f'annotated/{annotated_filename}', detected_classes, disease_details)
+        # Build full image URL
+        base_url = request.host_url.rstrip('/')
+        image_url = f"{base_url}/uploads/annotated/{annotated_filename}"
 
         return jsonify({
             'message': 'Image uploaded and detected successfully',
             'filename': f'annotated/{annotated_filename}',
+            'image_url': image_url,
             'detected_classes': detected_classes,
             'disease_details': disease_details
         })
@@ -330,6 +330,7 @@ def upload_image(user_id):
     except Exception as e:
         print("❌ Error saat deteksi:", e)
         return jsonify({'error': 'Detection failed', 'detail': str(e)}), 500
+
 
 # Public upload (no auth, history not saved)
 @app.route('/public-upload', methods=['POST'])
@@ -356,7 +357,7 @@ def public_upload_image():
         detected_classes = []
         disease_details = []
 
-        annotated_filename = f"public_annotated_{image.filename}"
+        annotated_filename = f"public_annotated_{filename}"
         annotated_path = os.path.join(ANNOTATED_FOLDER, annotated_filename)
 
         for result in results:
@@ -375,16 +376,21 @@ def public_upload_image():
                             "solusi": info["solusi"]
                         })
 
+        # Build full image URL
+        base_url = request.host_url.rstrip('/')
+        image_url = f"{base_url}/uploads/annotated/{annotated_filename}"
+
         return jsonify({
             'message': 'Image detected successfully (public)',
             'filename': f'annotated/{annotated_filename}',
+            'image_url': image_url,
             'detected_classes': detected_classes,
             'disease_details': disease_details
         })
 
     except Exception as e:
         return jsonify({'error': 'Detection failed', 'detail': str(e)}), 500
-
+    
 
 @app.route('/history', methods=['GET'])
 @token_required
