@@ -420,5 +420,9 @@ def uploaded_file(filename):
 def get_annotated_image(filename):
     return send_from_directory(ANNOTATED_FOLDER, filename)
 
+# if __name__ == '__main__':
+#     app.run(debug=True)
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+
