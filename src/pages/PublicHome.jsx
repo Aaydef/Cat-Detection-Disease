@@ -38,6 +38,7 @@ const PublicHome = () => {
       method: 'POST',
       body: formData,
     })
+
       .then(res => res.json())
       .then(data => {
         setDetectionResult(data);
@@ -59,7 +60,9 @@ const PublicHome = () => {
       <NavBar />
       <div className="container">
         <h1 className="welcome">Welcome to Cat Skin Detect Disease!</h1>
-        <h3 className="text-sign">Sign in to experience our other features!</h3>
+        <h3 className="text-sign">
+          <a href="/login" className="inline-link">Sign in</a> to experience our other features!
+        </h3>
 
         <div className="home-row">
           <div className="upload-box">
@@ -125,13 +128,13 @@ const PublicHome = () => {
       {showModal && detectionResult && detectionResult.disease_details && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <h2>Detection Result</h2>
+            <h2 className="modal-title">Detection Result</h2>
 
             {detectionResult.disease_details.map((disease, index) => (
               <div key={index}>
-                <h4><b>{disease.name}</b></h4>
-                <p><b>Penjelasan:</b> {disease.penjelasan}</p>
-                <p><b>Solusi:</b> {disease.solusi}</p>
+                <h4 className="disease-name"><b>{disease.name}</b></h4>
+                <p className="penjelasanM"><b>Penjelasan:</b> {disease.penjelasan}</p>
+                <p className="solusiM"><b>Solusi:</b> {disease.solusi}</p>
               </div>
             ))}
 

@@ -10,11 +10,13 @@ export default function Login() {
   const navigate = useNavigate();
   const { login } = useAuth();
 
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/login", {
+      const res = await fetch(`${API_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -22,9 +24,14 @@ export default function Login() {
         body: JSON.stringify({ email, password }),
       });
 
+      console.log("Response status:", res.status);
+      
+      // Cek dulu apakah response bisa di parse ke json
       const data = await res.json();
+      console.log("Response data:", data);
 
       if (res.ok) {
+        // lanjutkan proses login
         setIsSuccess(true);
         setMessage("Login berhasil!");
 
@@ -34,7 +41,7 @@ export default function Login() {
           username: data.username || email,
         };
 
-        login(userData, data.token); // Simpan ke context
+        login(userData, data.token);
 
         setTimeout(() => {
           navigate("/home");
@@ -44,10 +51,12 @@ export default function Login() {
         setMessage(data.error || "Login gagal");
       }
     } catch (error) {
+      console.error("Fetch error:", error);
       setIsSuccess(false);
       setMessage("Terjadi kesalahan, coba lagi nanti.");
     }
   };
+
 
   return (
     <div className="login-container flex-center">

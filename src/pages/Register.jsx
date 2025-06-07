@@ -53,7 +53,7 @@ export default function Register() {
             <input
               type="text"
               placeholder="Nama kamu"
-              className="input"
+              className="form-input"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -64,7 +64,7 @@ export default function Register() {
             <input
               type="email"
               placeholder="Email kamu"
-              className="input"
+              className="form-input"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -75,7 +75,7 @@ export default function Register() {
             <input
               type="password"
               placeholder="********"
-              className="input"
+              className="form-input"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required

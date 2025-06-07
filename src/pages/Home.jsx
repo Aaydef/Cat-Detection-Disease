@@ -284,8 +284,8 @@ const Home = () => {
             {detectionResult.disease_details.map((disease, index) => (
               <div key={index} className="disease-detail">
                 <h4 className="disease-name"><b>{disease.name}</b></h4>
-                <p><b>Penjelasan:</b> {disease.penjelasan}</p>
-                <p><b>Solusi:</b> {disease.solusi}</p>
+                <p className="penjelasanM"><b>Penjelasan:</b> {disease.penjelasan}</p>
+                <p className="solusiM"><b>Solusi:</b> {disease.solusi}</p>
               </div>
             ))}
 

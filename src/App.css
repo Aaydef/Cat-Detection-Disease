@@ -26,7 +26,6 @@ html, body {
   margin-top: 0.2rem;
 }
 
-
 .nav-row {
   display: flex;
   align-items: center;
@@ -34,12 +33,24 @@ html, body {
   background-color: white;
   border-bottom: 1.5px solid #ddd;
   margin-right: 2rem;
+  position: relative;
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  position: relative;
+  background-color: white;
 }
 
 .nav-left {
   display: flex;
   align-items: center;
   gap: 1rem;
+  background-color: white;
 }
 
 .nav-right {
@@ -103,7 +114,7 @@ html, body {
 }
 
 .text-sign{
-  color: #ff002b;
+  color: #fd1d8d;
   border: 1.5px solid #0f86fd;  
   background-color: transparent;
   padding: 0.5rem 1rem; 
@@ -523,6 +534,10 @@ html, body {
   margin-top: 0.3rem;
 }
 
+.penjelasanM, .solusiM{
+  color: rgb(0, 0, 0);
+}
+
 .delete-button {
   margin-top: 12px;
   background-color: #e53935;
@@ -539,6 +554,9 @@ html, body {
   background-color: #ea1b86;
 }
 
+.modal-title{
+  color: #ff0080;
+}
 
 /* modal tampilan */
 .modal-overlay {
@@ -819,9 +837,92 @@ html, body {
   margin-top: -5px;
 }
 
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+}
+
+.btn-logout {
+  position: absolute;
+  top: 115%;           
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  opacity: 0;
+  pointer-events: none;
+  background-color: #fd0b0b;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  z-index: 100;
+  border: 3.5px solid rgb(255, 151, 208);
+}
+
+/* Saat tombol muncul */
+.btn-logout.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) scale(1);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.form-input {
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  color: #000;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.65rem;
+  background-color: #4caf50;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-section{
+  position: relative;
+  display: inline-block;
+}
+
+.inline-link{
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+
 /* responsive */
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .container {
     padding-left: 0%;
     overflow-x: hidden;
@@ -831,17 +932,43 @@ html, body {
   .nav-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    position: relative; 
+  }
+
+ .nav-top {
+    display: flex;
+    flex-direction: column; /* ← stack logo + hamburger */
+    align-items: flex-start;
+    position: relative;
     width: 100%;
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    right: 1rem;
+    position: relative;
+    margin-left: 340px;
   }
 
   .nav-right {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* tepat di bawah nav-row */
+    right: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 10;
+  }
+
+  .nav-right.open {
     display: flex;
-    justify-content: space-between; /* pisahkan tombol kiri dan profile kanan */
-    align-items: center;
-    flex-wrap: wrap; /* biar kalau kekecilan bisa turun */
-    width: 100%;
-    gap: 0.5rem;
+    border: 3.5px solid pink;
   }
   
   .nav-left {
@@ -861,11 +988,13 @@ html, body {
   }
 
   .features {
-    display: flex;
+    flex-direction: column;
     gap: 0.5rem;
-    flex: 1; 
-    flex-wrap: wrap;
-    padding-left: 0.5rem;
+  }
+
+  .btn-login, .btn-logout {
+    text-align: center;
+    font-size: 17px;
   }
   
   .title {
@@ -1006,221 +1135,6 @@ html, body {
     position: relative;
     overflow-y: auto;
     position: fixed;
-  }
-
-  .history-container{
-    margin-right: 2rem;
-  }
-
-  .history-title {
-    font-size: 20px;
-    margin-right: 3.5rem;
-  }
-
-  .welcome{
-    font-size: 35px;
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .speech-bubble {
-    font-size: 14px;
-    max-width: 100px;
-    padding: 8px 10px;
-    left: 88px;
-  }
-
-  .speech-bubble::after {
-    border-width: 8px;
-    right: -30px;
-    border-left-color: #ff08b5;
-    border-right-color: transparent;
-  }
-}
-
-@media (max-width: 700px) {
-  .container {
-    padding-left: 0%;
-    overflow-x: hidden;
-    width: 100%;
-  }
-
-  .nav-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-    width: 100%;
-  }
-
-  .nav-right {
-    display: flex;
-    justify-content: space-between; /* pisahkan tombol kiri dan profile kanan */
-    align-items: center;
-    flex-wrap: wrap; /* biar kalau kekecilan bisa turun */
-    width: 100%;
-    gap: 0.5rem;
-  }
-  
-  .nav-left {
-    justify-content: center; 
-    flex-direction: row;
-    margin-left: -25px;
-    margin-top: 0.8rem;
-  }
-
-  .nav-left img {
-    height: auto;
-  }
-
-  .home-row {
-    width: 110%;
-    justify-content: left;
-  }
-
-  .features {
-    display: flex;
-    gap: 0.5rem;
-    flex: 1; 
-    flex-wrap: wrap;
-    padding-left: 0.5rem;
-  }
-  
-  .title {
-    flex-grow: 1; 
-    text-align: left; 
-  }
-
-  .title h1 {
-    font-size: 1.75rem;
-    text-align: center;
-  }
-
-  .title h2 {
-    font-size: 1.2rem;
-    text-align: left;
-  }
-
-  .button1 {
-    flex-direction: column;
-    gap: 0.5rem;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .row-text {
-    margin-left: 0;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .text {
-    font-size: 1.5rem;
-  }
-
-  .btn-detect {
-    width: 100%;
-    font-size: 1rem;
-    padding: 0.6rem 1rem;
-  }
-
-  .upload-box {
-    width: 100%;
-    max-width: 320px;
-    padding: 1rem;
-    margin-top: 1rem;
-    margin-left: 2.5rem;
-    margin-right: 2rem;
-  }
-
-  .image-preview {
-    max-width: 100%;
-  }
-
-  .image-cat{
-    justify-content: center;
-    max-width: 100px;
-    margin-top: 0;
-  }
-
-  .image-cat img {
-    max-width: 400px;
-    margin-left: 100px;
-  }
-
-  .cat-cont {
-    justify-content: center;
-    width: 80%;
-  }
-
-  .history-grid {
-    grid-template-columns: 1fr; /* Hanya satu kolom di layar sangat kecil */
-    gap: 1rem; 
-    padding: 0.5rem;
-    margin-right: 3rem;
-  }  
- 
-  .open-camera-container{
-    width: 100%;
-    max-width: 320px;
-    padding: 1rem;
-    margin-top: 1rem;
-    margin-left: 2.5rem;
-    margin-right: 2rem;
-  }
-
-  .btn-open-camera{
-    align-items: right;
-  }
-
-  .upload-box.camera-upload-box {
-    flex-direction: column; 
-    align-items: flex-start; /* horizontal di mobile */
-    padding: 0.5rem;
-    gap: 10px; 
-    width: 100%;
-    margin-left: 5.5px;
-  }
-
-  .left-side.camera-left-side {
-    align-items: center; 
-    margin-bottom: 1rem;
-  }
-
-  .camera-label {
-    text-align: center; 
-    font-size: 0.9rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .camera-video {
-    width: 100%; 
-    height: auto; 
-    margin-left: 0; 
-    margin-right: 1.4rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .camera-capture-btn {
-    width: 80%; 
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .image-preview.camera-image-preview {
-    margin-top: 0.5rem;
-    width: 80%; 
-  }
-
-  .modal-content.modal-camera-content {
-    width: 100vw;            
-    max-width: 100%;          
-    box-sizing: border-box;  
-    margin: 0 auto;           
-    padding: 16px;            
-    overflow-x: hidden;       
-    border-radius: 8px;
-    background: white;
-    position: relative;
   }
 
   .history-container{

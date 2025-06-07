@@ -15,6 +15,7 @@ import cv2
 import base64
 from io import BytesIO
 from PIL import Image
+from flask import send_from_directory, render_template
 
 
 # Initialize OBB model
@@ -22,7 +23,7 @@ model_path = os.path.join(os.path.dirname(__file__), 'model', 'best.pt')
 model = YOLO(model_path)
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True)
 app.config['SECRET_KEY'] = SECRET_KEY # ubah kalau sudah masuk production
 
 # Storage directories
@@ -282,45 +283,58 @@ def delete_history_db(user_id, filename):
 def upload_image(user_id):
     if 'image' not in request.files:
         return jsonify({'error': 'No image uploaded'}), 400
+
     image = request.files['image']
     if image.filename == '':
         return jsonify({'error': 'No selected file'}), 400
-    filename = secure_filename(image.filename)
-    filepath = os.path.join('uploads', filename)
+
+    filepath = os.path.join(UPLOAD_FOLDER, image.filename)
     image.save(filepath)
+
+    if not os.path.exists(filepath):
+        return jsonify({'error': 'Saved file not found'}), 500
+
     try:
         results = model.predict(source=filepath, save=False)
-        if not results:
+        if not results or len(results) == 0:
             return jsonify({'error': 'No detection results'}), 500
+
         detected_classes = []
         disease_details = []
-        result = results[0]
-        img_array = result.plot()
-        img = Image.fromarray(img_array)
-        buffered = BytesIO()
-        img.save(buffered, format="JPEG")
-        img_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
-        image_url = f"data:image/jpeg;base64,{img_base64}"
-        if result.obb is not None and len(result.obb) > 0:
-            for obb in result.obb:
-                class_id = int(obb.cls[0].item())
-                class_name = model.names.get(class_id, "Unknown")
-                if class_name not in detected_classes:
-                    detected_classes.append(class_name)
-                    info = DISEASE_INFO.get(class_name, {"penjelasan": "Tidak diketahui", "solusi": "Belum ada rekomendasi"})
-                    disease_details.append({
-                        "name": class_name,
-                        "penjelasan": info["penjelasan"],
-                        "solusi": info["solusi"]
-                    })
+
+        annotated_filename = f"annotated_{image.filename}"
+        annotated_path = os.path.join(ANNOTATED_FOLDER, annotated_filename)
+
+        for result in results:
+            result.save(filename=annotated_path)
+
+            if result.obb is not None and len(result.obb) > 0:
+                for obb in result.obb:
+                    class_id = int(obb.cls[0].item())
+                    class_name = model.names.get(class_id, "Unknown")
+                    if class_name not in detected_classes:
+                        detected_classes.append(class_name)
+                        info = DISEASE_INFO.get(class_name, {"penjelasan": "Tidak diketahui", "solusi": "Belum ada rekomendasi"})
+                        disease_details.append({
+                            "name": class_name,
+                            "penjelasan": info["penjelasan"],
+                            "solusi": info["solusi"]
+                        })
+
+        # Build full image URL
+        base_url = request.host_url.rstrip('/')
+        image_url = f"{base_url}/uploads/annotated/{annotated_filename}"
+
         return jsonify({
             'message': 'Image uploaded and detected successfully',
-            'filename': None,
+            'filename': f'annotated/{annotated_filename}',
             'image_url': image_url,
             'detected_classes': detected_classes,
             'disease_details': disease_details
         })
+
     except Exception as e:
+        print("❌ Error saat deteksi:", e)
         return jsonify({'error': 'Detection failed', 'detail': str(e)}), 500
 
 
@@ -420,6 +434,17 @@ def get_annotated_image(filename):
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve_react(path):
+    root_dir = os.path.join(os.path.dirname(__file__), 'frontend')
+    file_path = os.path.join(root_dir, path)
+
+    if path != "" and os.path.exists(file_path):
+        return send_from_directory(root_dir, path)
+    else:
+        return send_from_directory(root_dir, 'index.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

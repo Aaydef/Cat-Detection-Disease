@@ -17,33 +17,33 @@ import './Login.css';
 import './Register.css';
 
 function App() {
-
-  const { token, user } = useAuth();
-  const navigate = useNavigate();
+  const { token } = useAuth();
 
   return (
     <Routes>
       {/* Public home di root */}
       <Route path="/" element={<PublicHome />} />
 
+      {/* Disease Info bisa diakses publik */}
+      <Route path="/diseaseinfo" element={<DiseaseInfo />} />
+
+      {/* Login/Register */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
+      {/* Route private */}
       <Route
         path="/home"
         element={token ? <Home /> : <Navigate to="/login" replace />}
       />
-
-      <Route path="/login" element={<Login />} />
-
-      <Route path="/register" element={<Register />} />
-
-      {token && ( 
+      {token && (
         <>
           <Route path="/history" element={<History />} />
-          <Route path="/diseaseinfo" element={<DiseaseInfo />} />
         </>
       )}
-     
     </Routes>
   );
 }
+
 
 export default App;
