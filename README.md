@@ -1,12 +1,23 @@
-# React + Vite
+# Cat Skin Disease Detection System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projek akhir ini merupakan sistem deteksi penyakit kulit kucing berbasis **YOLOv8** yang dapat membantu pemilik kucing mengenali gejala penyakit kulit melalui gambar.  
+Sistem ini dibangun dengan arsitektur **Flask (backend)** dan **React (frontend)**, serta mendukung fitur login, riwayat deteksi, hingga mode preview tanpa login.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Fitur
+- 🔍 **Deteksi penyakit kulit kucing** menggunakan model YOLOv8 terlatih.
+- 🖥️ **Frontend React** dengan tampilan interaktif.
+- ⚙️ **Backend Flask** untuk inference model, penyimpanan hasil, dan API.
+- 📂 **Riwayat deteksi** disimpan pada ` SQL database`.
+- 👤 **Login & Register** untuk akses fitur tambahan (History & Disease Info).
+- 👀 **Preview Mode** — pengguna tanpa login tetap dapat mencoba fitur deteksi.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- **Python (Flask)** — Backend & API
+- **React + Tailwind** — Frontend
+- **YOLOv8 (PyTorch)** — Computer Vision Model
+- **Roboflow** — Dataset management & preprocessing
+- **Kaggle** — Model training environment
