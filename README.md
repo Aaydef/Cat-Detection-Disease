@@ -21,3 +21,13 @@ Sistem ini dibangun dengan arsitektur **Flask (backend)** dan **React (frontend)
 - **YOLOv8 (PyTorch)** — Computer Vision Model
 - **Roboflow** — Dataset management & preprocessing
 - **Kaggle** — Model training environment
+---
+
+## 🖼️ Image Annotation
+Hasil anotasi gambar menggunakan Roboflow untuk dataset deteksi penyakit kulit kucing.
+Proses anotasi dilakukan secara manual untuk memastikan ketepatan bounding box dan label pada setiap gambar.
+<img width="1558" height="764" alt="image" src="https://github.com/user-attachments/assets/4862e541-b5c3-4120-8c56-223bbf5b1502" />
+
+## Creating Model
+<img width="1425" height="840" alt="image" src="https://github.com/user-attachments/assets/6fd64f74-f96d-4a61-bf1f-0d11a1f71eeb" />
+
